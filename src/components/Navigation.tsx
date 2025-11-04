@@ -22,11 +22,11 @@ const Navigation = () => {
           <Link to="/about" className="text-accent font-medium hover:text-accent/80 transition-colors">
             About
           </Link>
+          
+          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-6 rounded-full">
+            Sign in
+          </Button>
         </div>
-
-        <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-6 rounded-full">
-          Sign in
-        </Button>
       </div>
     </nav>
   );
