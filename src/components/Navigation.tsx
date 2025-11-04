@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-glass border-b border-border/50 shadow-sm">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-2">
           <div className="text-2xl font-bold">
@@ -23,7 +23,7 @@ const Navigation = () => {
             About
           </Link>
           
-          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-6 rounded-full">
+          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-6 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
             Sign in
           </Button>
         </div>

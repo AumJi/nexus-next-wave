@@ -19,6 +19,7 @@ All colors MUST be HSL.
 
     --primary: 18 100% 62%;
     --primary-foreground: 0 0% 100%;
+    --primary-glow: 25 95% 85%;
 
     --secondary: 210 50% 96%;
     --secondary-foreground: 0 0% 10%;
@@ -36,7 +37,23 @@ All colors MUST be HSL.
     --input: 25 30% 90%;
     --ring: 18 100% 62%;
 
-    --radius: 1rem;
+    --radius: 1.5rem;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(18 100% 62%), hsl(28 100% 70%));
+    --gradient-secondary: linear-gradient(135deg, hsl(210 80% 90%), hsl(200 70% 95%));
+    --gradient-accent: linear-gradient(135deg, hsl(25 100% 97%), hsl(210 50% 96%));
+    --gradient-hero: linear-gradient(180deg, hsl(25 100% 97%) 0%, hsl(210 50% 98%) 50%, hsl(25 95% 96%) 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 8px -2px hsl(18 100% 62% / 0.1);
+    --shadow-md: 0 8px 24px -8px hsl(18 100% 62% / 0.2);
+    --shadow-lg: 0 16px 48px -12px hsl(18 100% 62% / 0.25);
+    --shadow-glow: 0 0 40px hsl(18 100% 62% / 0.15);
+    
+    /* Transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +118,56 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+  
+  .card-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .hover-lift {
+    transition: var(--transition-smooth);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .backdrop-blur-glass {
+    backdrop-filter: blur(12px);
+    background: hsl(var(--background) / 0.8);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
   }
 }

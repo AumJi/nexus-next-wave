@@ -6,17 +6,26 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      {/* Decorative Background Elements */}
+      <div className="fixed top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl animate-float" />
+      <div className="fixed bottom-0 left-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
+      
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4">
-        <div className="container mx-auto max-w-5xl text-center space-y-6">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
-            พลิกโฉมห้องของคุณด้วยนวัตกรรม <span className="text-primary">AI</span>
+      <section className="pt-32 pb-20 px-4 relative">
+        <div className="container mx-auto max-w-5xl text-center space-y-8">
+          <div className="inline-block animate-fade-in-up">
+            <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">
+              ✨ Powered by Advanced AI Technology
+            </span>
+          </div>
+          <h1 className="text-5xl md:text-7xl font-bold text-foreground leading-tight animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+            พลิกโฉมห้องของคุณ<br />ด้วยนวัตกรรม <span className="gradient-text">AI</span>
           </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            พวกเราทำสิ่งมหัศจรรย์ด้วยการออกแบบดุลแห่งงายในตัวบริการทำให้การสร้างภาพซ้าลองบ้องอย่างมืออาชีพเป็นสิ่งที่ทุกคนเข้าถึงได้ ผ่านฟังก์ชันของโปรแกรมระดับสูง
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            พวกเราทำสิ่งมหัศจรรย์ด้วยการออกแบบดุลแห่งงายในตัวบริการ ทำให้การสร้างภาพซ้าลองบ้องอย่างมืออาชีพ เป็นสิ่งที่ทุกคนเข้าถึงได้ ผ่านฟังก์ชันของโปรแกรมระดับสูง
           </p>
         </div>
       </section>
@@ -48,8 +57,9 @@ const About = () => {
       </section>
 
       {/* Goals Section */}
-      <section className="py-20 px-4 bg-secondary">
-        <div className="container mx-auto max-w-6xl">
+      <section className="py-20 px-4 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-secondary/50 to-background" />
+        <div className="container mx-auto max-w-6xl relative">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12">เป้าหมายของพวกเรา</h2>
           
           <div className="grid md:grid-cols-2 gap-12 items-start">
@@ -114,8 +124,9 @@ const About = () => {
       </section>
 
       {/* Technology Section */}
-      <section className="py-20 px-4 bg-secondary">
-        <div className="container mx-auto max-w-6xl">
+      <section className="py-20 px-4 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/30 to-background" />
+        <div className="container mx-auto max-w-6xl relative">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-6">
             แรงบันดาลใจของ Prompt2Room
           </h2>
@@ -168,10 +179,13 @@ const About = () => {
               </Card>
             </div>
 
-            <Card className="p-8 bg-gradient-to-br from-background to-card border-2 border-primary/20">
-              <CardContent className="p-0">
+            <Card className="p-8 relative overflow-hidden border-2 border-primary/30 hover-lift bg-gradient-to-br from-primary/5 to-accent/5">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl" />
+              <CardContent className="p-0 relative">
                 <div className="flex items-center space-x-3 mb-6">
-                  <Palette className="w-8 h-8 text-primary" />
+                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                    <Palette className="w-7 h-7 text-primary" />
+                  </div>
                   <h3 className="text-xl font-bold text-foreground">AI Design Process</h3>
                 </div>
                 <ol className="space-y-4 text-foreground">
