@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 
-const Navigation = () => {
+const Header = () => {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-glass border-b border-border/50 shadow-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-glass border-b border-border/50 shadow-sm">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-2">
           <div className="text-2xl font-bold">
@@ -12,7 +11,7 @@ const Navigation = () => {
           </div>
         </Link>
         
-        <div className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-6">
           <Link to="/generate" className="text-foreground hover:text-primary transition-colors font-medium">
             Generate
           </Link>
@@ -25,14 +24,10 @@ const Navigation = () => {
           <Link to="/about" className="text-accent font-medium hover:text-accent/80 transition-colors">
             About
           </Link>
-          
-          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-6 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-            Sign in
-          </Button>
-        </div>
+        </nav>
       </div>
-    </nav>
+    </header>
   );
 };
 
-export default Navigation;
+export default Header;
